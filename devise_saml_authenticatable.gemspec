@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = DeviseSamlAuthenticatable::VERSION
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.required_ruby_version = ">= 2.6.0"
+  gem.required_ruby_version = ">= 2.5.9"
 
   gem.add_dependency("devise","> 2.0.0")
   gem.add_dependency("ruby-saml","~> 1.7")
