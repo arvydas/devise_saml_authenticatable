@@ -3,8 +3,8 @@ require 'ruby-saml'
 class Devise::SamlSessionsController < Devise::SessionsController
   include DeviseSamlAuthenticatable::SamlConfig
 
-  skip_before_action :verify_authenticity_token, raise: false
-  prepend_before_action :verify_signed_out_user, :store_info_for_sp_initiated_logout, only: :destroy
+  skip_before_filter :verify_authenticity_token, raise: false
+  prepend_before_filter :verify_signed_out_user, :store_info_for_sp_initiated_logout, only: :destroy
 
   def new
     idp_entity_id = get_idp_entity_id(params)
